@@ -1,1 +1,15 @@
-[{"title":"Test Title","text":"Test text"}]
+
+[
+    {
+      "title": "Hello User",
+      "text": "Welcome to my application."
+    },
+    {
+      "title": "This is another saved note",
+      "text": "The top right shows you can delete or edit me"
+    },
+    {
+      "title": "Another note example",
+      "text": "Hope you're satisfied using this application!"
+    }
+  ]
