@@ -3,11 +3,12 @@ work in progress , still getting updated
 # Express Homework: Note Taker
 
 ## Description
-This application is created so a User can write, save, and delete notes! It is also created using an express back end in order to save and retrieve the note data from a JSON file.
+* This application is created so a User can write, save, and delete notes! 
+* It is also created using an express back end in order to save and retrieve the note data from a JSON file.
 
 
 ## Deployed Site 
-Click [here] for the deployed site (https://floating-springs-49667.herokuapp.com/)
+View on Heroku: https://floating-springs-49667.herokuapp.com/
 
 
 
