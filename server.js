@@ -1,18 +1,30 @@
-// creating paths
-const path = require('path');
-const fs = require('fs');
+// note to self // this is done // shouldn't be touched //
+
+
+// requiring express and express server 
+var express = require("express");
+var app = express(); 
+
+// created my var port
 const PORT = process.env.PORT || 3333;
 
-// need to set up express app to parse data
+// set up the express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+const path = require('path');
+const fs = require('fs');
+
+// routes // points the server to the route files
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
 
 // need get request 
 
 // need post request 
 
 // need delete request
-
-// folder to get the css and js file 
-
 
 // set up my port 
 app.listen(PORT, function () {
