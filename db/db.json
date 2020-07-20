@@ -1,2 +1,4 @@
 
-[]
+[{"title":"Welcome","text":"Welcome to my Note Taker","id":1},
+  {"title":"Click Here","text":"You can edit or delete me","id":2},
+  {"title":"Click Here Too!","text":"You can write your own note by clicking the top right","id":3}]
