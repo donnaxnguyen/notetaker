@@ -16,8 +16,8 @@ const path = require('path');
 const fs = require('fs');
 
 // routes // points the server to the route files
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/apiroutes")(app);
+require("./routes/htmlroutes")(app);
 
 
 // need get request 
