@@ -37,22 +37,74 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
+
+  <script type="text/javascript">
+    // Get the notes data from the server.
+    function getNotes() {
+      $.get("api/notes", function (data) {
+        if (data) {
+          let listGroup = $(".list-group");
+          listGroup.empty();
+          for (i = 0; i < data.length; i++) {
+
+
+            let trash = $(`<i class="fas fa-trash-alt delete" index=${i}></i>`);
+            listGroup.append(
+              $("<li>").attr("class", "list-group-item").attr("index", i).text(data[i].title).append(trash),
+            )
+          }
+
+          
+          $(".list-group-item").on("click", function () {
+            let index = $(this).attr("index");
+            $.get("api/notes", function (data) {
+              const {title} = data[index];
+              const {body} = data[index];
+              const {journal} = data[index];
+              $(".note-title").val(title);
+              $(".note-text").val(body);
+              $(".note-journal").val(journal);
+            })
+          })
+
+          // to delete notes
+          $(".delete").on("click", function () {
+            var index = $(this).attr("index");
+            $.ajax({
+              url: "api/journals/" + index,
+              method: "DELETE"
+            }).then(function (response) {
+              getJournals();
+            });
+          });
+        }
+      })
+    }
+
+    // to save a note
+    $(".save-note").on("click", function () {
+      let journal = {
+        title: $(".note-title").val(),
+        body: $(".note-text").val(),
+        journal: $(".note-journal").val(),
+
+      }
+      $.post("api/journals", journal, function (data) {
+
+        // reload page
+      }).then(function (response) {
+        getJournals()
+      })
+    });
+
+    // clearing a note
+    $(".clear-note").on("click", function() {
+      $(".note-title").val('');
+      $(".note-text").val('');
+      $(".note-journal").val('');
+    })
+
+    getJournals();
+  </script>
 </body>
-
 </html>
-
-<!-- 
-
-need to get data from server 
-need to display data 
-delete option
-save note
-save note
-edit note
-clear note
-
-
-
-
-
--->
