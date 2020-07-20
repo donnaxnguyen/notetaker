@@ -4,7 +4,6 @@ var path = require("path");
 var fs = require("fs")
 
 // Sets up the  express app 
-// =============================================================
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -16,7 +15,7 @@ app.use(express.static("public"));
 
 
 // HTML and API routes 
-app.get("*", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
