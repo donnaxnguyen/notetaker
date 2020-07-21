@@ -1,5 +1,3 @@
-work in progress , still getting updated
-
 # Express Homework: Note Taker
 
 ## Description
